@@ -179,7 +179,7 @@ load_increment (gpointer data, const guchar *buf, guint size, GError **error)
       if (status != VP8_STATUS_OK && status != VP8_STATUS_SUSPENDED)
         {
           g_set_error (error, GDK_PIXBUF_ERROR, GDK_PIXBUF_ERROR_FAILED,
-                       "Could not incrementally decode WebP stream chunk");
+                       "Could not incrementally decode WebP stream chunk. VP8 Status: %d", status);
           return FALSE;
         }
 
